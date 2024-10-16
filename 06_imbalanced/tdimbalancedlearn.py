@@ -514,8 +514,8 @@ def plot_roc_curves(
         model_list = list(df_roc.model_id.unique())
 
     # Create a colormap and generate colors for each model
-    cmap = plt.get_cmap('winter')  # 'winter' is a blue-green colormap
-    colors = [mcolors.to_hex(cmap(i)) for i in np.linspace(0, 1, len(model_list))]
+    cmap = plt.get_cmap('Dark2', lut=len(model_list))
+    colors = [mcolors.to_hex(cmap(i)) for i in range(len(model_list))]
 
     # If highlight_model is specified and exists in model_list, remove it from the normal plot list
     if (highlight_model is not None) and (highlight_model in model_list):
